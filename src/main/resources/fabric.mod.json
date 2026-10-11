@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "figasmo",
+  "version": "${version}",
+  "license": "MIT",
+  "name": "Figasmo",
+  "mixins": [
+    "figasmo.mixins.json"
+  ],
+  "entrypoints": {
+    "main": [
+      "dev.nenicadi.figasmo.Figasmo"
+    ],
+    "figura_api": [
+      "dev.nenicadi.figasmo.FigasmoAddon"
+    ],
+    "voicechat": [
+      "dev.nenicadi.figasmo.modules.SimpleVoiceAddon"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "figura": ">=${figura_version}"
+  }
+}

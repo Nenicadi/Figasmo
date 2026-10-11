@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "dev.nenicadi.figasmo.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EventsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
