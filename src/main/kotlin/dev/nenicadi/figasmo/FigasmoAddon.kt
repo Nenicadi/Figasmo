@@ -12,7 +12,7 @@ import java.util.function.Function
 
 @FiguraAPIPlugin
 @LuaWhitelist
-class FigasmoAddon: FiguraAPI {
+object FigasmoAddon: FiguraAPI {
     val figasmoPluginClasses: Array<Class<*>> = arrayOf(
         this::class.java,
         VoiceAPI::class.java,

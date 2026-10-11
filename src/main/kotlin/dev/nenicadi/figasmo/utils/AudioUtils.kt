@@ -1,10 +1,9 @@
 package dev.nenicadi.figasmo.utils
 
+import dev.nenicadi.figasmo.accessors.EventAccessor
 import org.figuramc.figura.FiguraMod
 import org.figuramc.figura.avatar.Avatar
 import org.figuramc.figura.avatar.AvatarManager
-import org.luaj.vm2.LuaString
-import org.luaj.vm2.LuaTable
 import java.util.UUID
 import kotlin.math.abs
 import kotlin.math.log10

@@ -4,18 +4,29 @@
   "version": "${version}",
   "license": "MIT",
   "name": "Figasmo",
+  "description": "Integration between Figura and Voice!",
+  "icon": "assets/figasmo/icon.png",
   "mixins": [
     "figasmo.mixins.json"
   ],
   "entrypoints": {
-    "main": [
-      "dev.nenicadi.figasmo.Figasmo"
-    ],
-    "figura_api": [
-      "dev.nenicadi.figasmo.FigasmoAddon"
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "dev.nenicadi.figasmo.Figasmo"
+      }
     ],
     "voicechat": [
-      "dev.nenicadi.figasmo.modules.SimpleVoiceAddon"
+      {
+        "adapter": "kotlin",
+        "value": "dev.nenicadi.figasmo.modules.SimpleVoiceAddon"
+      }
+    ],
+    "figura_api": [
+      {
+        "adapter": "kotlin",
+        "value": "dev.nenicadi.figasmo.FigasmoAddon"
+      }
     ]
   },
   "depends": {
@@ -24,5 +35,11 @@
     "fabric-api": "*",
     "minecraft": "${minecraft_version}",
     "figura": ">=${figura_version}"
+  },
+  "authors": [ "Nenicadi" ],
+  "contact": {
+    "homepage": "https://t.me/ashesom",
+    "sources": "https://github.com/Nenicadi/Figasmo",
+    "issues": "https://github.com/Nenicadi/Figasmo/issues"
   }
 }

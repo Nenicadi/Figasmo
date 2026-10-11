@@ -18,6 +18,7 @@ import su.plo.voice.proto.data.audio.source.PlayerSourceInfo
 import su.plo.voice.proto.data.audio.source.SourceInfo
 import su.plo.voice.proto.packets.udp.clientbound.SelfAudioInfoPacket
 import su.plo.voice.proto.packets.udp.serverbound.PlayerAudioPacket
+import java.util.UUID
 
 @Addon(
     id = Figasmo.MOD_ID,
@@ -25,7 +26,7 @@ import su.plo.voice.proto.packets.udp.serverbound.PlayerAudioPacket
     version = Figasmo.MOD_VERSION,
     authors = [Figasmo.MOD_AUTHORS],
 )
-class PlasmoVoiceAddon: AddonInitializer {
+object PlasmoVoiceAddon: AddonInitializer {
 
     @InjectPlasmoVoice
     lateinit var voiceClient: PlasmoVoiceClient
@@ -74,6 +75,17 @@ class PlasmoVoiceAddon: AddonInitializer {
     @Suppress("UNUSED")
     private fun onPlayerSpeak(event: UdpClientPacketSendEvent) {
         if (event.packet is PlayerAudioPacket) speakEvent()
+    }
+
+    fun isMuted(player: UUID): Boolean {
+        if (::voiceClient.isInitialized.not()) return true
+
+        val serverConnection = voiceClient.serverConnection?.get() ?: return true
+        val playerInfo = serverConnection.getPlayerById(player)?.get() ?: return true
+
+        return playerInfo.isMuted
+                || playerInfo.isMicrophoneMuted
+                || playerInfo.isVoiceDisabled
     }
 
 }

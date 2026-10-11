@@ -1,4 +1,4 @@
-package dev.nenicadi.figasmo.utils
+package dev.nenicadi.figasmo.accessors
 
 import org.figuramc.figura.lua.api.event.LuaEvent
 

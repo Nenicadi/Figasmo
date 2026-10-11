@@ -1,6 +1,6 @@
 package dev.nenicadi.figasmo.mixins
 
-import dev.nenicadi.figasmo.utils.EventAccessor
+import dev.nenicadi.figasmo.accessors.EventAccessor
 import org.figuramc.figura.lua.LuaWhitelist
 import org.figuramc.figura.lua.api.event.EventsAPI
 import org.figuramc.figura.lua.api.event.LuaEvent
@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Inject
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo
 
 @Mixin(value = [EventsAPI::class], remap = false)
-abstract class EventsMixin : EventAccessor {
+abstract class EventsMixin: EventAccessor {
 
     @Shadow
     @Final

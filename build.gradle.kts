@@ -53,12 +53,13 @@ tasks.processResources {
         "figura_version" to project.property("figura.version")
     )
 
+    inputs.properties(props)
+
     listOf("fabric.mod.json", "Figasmo.kt").forEach {
         filesMatching(it) {
             expand(props)
         }
     }
-
 }
 
 kotlin {
